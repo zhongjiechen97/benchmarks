@@ -629,7 +629,7 @@ static void load_keys(struct core *c)
                 assert((events & SS_EPOLLOUT) == SS_EPOLLOUT);
                 if (co->tx_len == 0 && i < workload.keys_num) {
                     /* send out new request */
-                    /*printf("[%d:%p] i=%zu  keys_num=%zu\n", cn, co, i, workload.keys_num);*/
+                    // printf("[%d:%p] i=%zu  keys_num=%zu\n", cn, co, i, workload.keys_num);
                     k = &workload.keys[i];
                     set_request(c, co, k, 0);
                     if (conn_send(c, co) == 0) {
